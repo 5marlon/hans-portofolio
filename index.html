@@ -48,6 +48,13 @@
               accent: '#8b5cf6',
               neon: '#a855f7',
               glow: 'rgba(168, 85, 247, 0.4)',
+            },
+            pastel: {
+              pink: '#ffc4e1',
+              rose: '#ffb3d9',
+              lavender: '#e4c7ff',
+              blue: '#c7d7ff',
+              peach: '#ffd4c7',
             }
           },
           animation: {
@@ -195,10 +202,45 @@
       transform: translateY(-1px);
     }
 
-    /* iOS-style Liquid Glass Effect for Navigation Pills */
+    /* Soft Frosted Glassmorphism for Navigation - Pastel Pink Aesthetic */
+    .soft-frosted-nav {
+      background: rgba(23, 19, 44, 0.45);
+      backdrop-filter: blur(28px) saturate(190%);
+      -webkit-backdrop-filter: blur(28px) saturate(190%);
+      border: 1px solid rgba(255, 179, 217, 0.15);
+      box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.25),
+        0 1px 1px rgba(255, 255, 255, 0.1) inset,
+        0 0 25px -5px rgba(255, 179, 217, 0.12);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .soft-frosted-nav:hover {
+      border-color: rgba(255, 179, 217, 0.3);
+      box-shadow:
+        0 8px 35px rgba(0, 0, 0, 0.35),
+        0 1px 2px rgba(255, 255, 255, 0.15) inset,
+        0 0 35px -3px rgba(255, 179, 217, 0.22);
+    }
+
+    /* Soft Pastel Glass Pill for Navigation Links */
+    .pastel-glass-pill {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.08) inset;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Soft Pastel Nav Links */
     .nav-link {
       position: relative;
       overflow: hidden;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
     }
 
     .nav-link::before {
@@ -206,31 +248,73 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(
-        600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-        rgba(255, 255, 255, 0.08),
-        transparent 40%
+        120px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 179, 217, 0.22),
+        transparent 70%
       );
       opacity: 0;
       transition: opacity 0.3s ease;
+      border-radius: inherit;
     }
 
     .nav-link:hover::before {
       opacity: 1;
     }
 
+    .nav-link:hover {
+      color: #ffb3d9;
+      background: rgba(255, 179, 217, 0.08);
+      box-shadow: 0 0 16px -2px rgba(255, 179, 217, 0.25);
+    }
+
     .nav-link:active {
+      transform: scale(0.95);
+    }
+
+    /* Pastel Pink CTA Glow Button */
+    .pastel-pink-btn {
+      background: linear-gradient(135deg, #ffb3d9 0%, #c084fc 100%);
+      color: #0d0b16;
+      font-weight: 600;
+      box-shadow:
+        0 4px 20px -2px rgba(255, 179, 217, 0.4),
+        0 1px 1px rgba(255, 255, 255, 0.4) inset;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pastel-pink-btn:hover {
+      background: linear-gradient(135deg, #ffc4e1 0%, #d8b4fe 100%);
+      box-shadow:
+        0 6px 28px 0 rgba(255, 179, 217, 0.65),
+        0 1px 2px rgba(255, 255, 255, 0.6) inset;
+      transform: translateY(-1px);
+    }
+
+    .pastel-pink-btn:active {
       transform: scale(0.96);
     }
 
-    /* Enhanced glassmorphism for nav container */
-    .liquid-glass-nav {
-      background: rgba(11, 9, 20, 0.7);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
+    /* Soft Pastel Outline Button (Resume) */
+    .pastel-outline-btn {
+      background: rgba(255, 179, 217, 0.06);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 179, 217, 0.25);
+      color: #ffc4e1;
       box-shadow:
-        0 0 0 0.5px rgba(255, 255, 255, 0.1) inset,
-        0 8px 32px 0 rgba(0, 0, 0, 0.5),
-        0 0 80px -20px rgba(168, 85, 247, 0.3);
+        0 2px 10px rgba(0, 0, 0, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.1) inset;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pastel-outline-btn:hover {
+      background: rgba(255, 179, 217, 0.14);
+      border-color: rgba(255, 179, 217, 0.45);
+      color: #ffffff;
+      box-shadow:
+        0 4px 18px rgba(255, 179, 217, 0.25),
+        0 1px 1px rgba(255, 255, 255, 0.2) inset;
+      transform: translateY(-1px);
     }
   </style>
 </head>
@@ -248,69 +332,69 @@
   </div>
 
   <!-- ================================================================= -->
-  <!-- FLOATING NAVIGATION BAR -->
+  <!-- FLOATING NAVIGATION BAR - PASTEL GLASSMORPHISM & SOFT GLOW -->
   <!-- ================================================================= -->
   <header class="fixed top-5 inset-x-0 z-50 flex justify-center px-4 transition-all duration-300" id="main-header">
-    <nav class="w-full max-w-5xl bg-dark-900/80 backdrop-blur-md border border-purple-500/20 rounded-full px-5 py-3 flex items-center justify-between shadow-2xl shadow-purple-950/40">
+    <nav class="w-full max-w-5xl soft-frosted-nav rounded-full px-5 py-2.5 flex items-center justify-between">
 
-      <!-- Logo / Name initials -->
+      <!-- Logo / Name initials with Pastel Pink Gradient -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-purple-600 to-violet-400 p-[1px] shadow-lg shadow-purple-500/30">
-          <div class="w-full h-full bg-dark-950 rounded-full flex items-center justify-center group-hover:bg-transparent transition duration-300">
-            <span class="font-mono text-sm font-bold text-white tracking-wider">H</span>
+        <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-pastel-rose via-purple-400 to-pastel-lavender p-[1px] shadow-lg shadow-pink-500/20">
+          <div class="w-full h-full bg-dark-950/80 rounded-full flex items-center justify-center group-hover:bg-transparent transition duration-300">
+            <span class="font-mono text-sm font-bold text-pastel-pink group-hover:text-dark-950 tracking-wider transition">H</span>
           </div>
         </div>
-        <span class="font-semibold text-sm tracking-tight text-white group-hover:text-purple-300 transition">Hans Ottojuan</span>
+        <span class="font-semibold text-sm tracking-tight text-slate-100 group-hover:text-pastel-pink transition">Hans Ottojuan</span>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <div class="hidden md:flex items-center gap-1 liquid-glass-nav p-1 rounded-full border border-white/5">
-        <a href="#about" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition">About</a>
-        <a href="#skills" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition">Skills</a>
-        <a href="#projects" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition">Projects</a>
-        <a href="#contact" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-full transition">Contact</a>
+      <!-- Desktop Nav Links in Soft Frosted Glass Pill -->
+      <div class="hidden md:flex items-center gap-1.5 pastel-glass-pill p-1 rounded-full">
+        <a href="#about" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-pastel-pink rounded-full transition">About</a>
+        <a href="#skills" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-pastel-pink rounded-full transition">Skills</a>
+        <a href="#projects" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-pastel-pink rounded-full transition">Projects</a>
+        <a href="#contact" class="nav-link px-4 py-1.5 text-xs font-medium text-slate-300 hover:text-pastel-pink rounded-full transition">Contact</a>
       </div>
 
-      <!-- Action Button & Status Pill -->
+      <!-- Action Button & Status Pill with Pastel Accents -->
       <div class="hidden md:flex items-center gap-3">
-        <a href="resume.html" target="_blank" class="px-3.5 py-1.5 text-xs font-semibold rounded-full border border-purple-500/40 text-purple-300 hover:bg-purple-500/10 hover:border-purple-400 transition flex items-center gap-1.5">
+        <a href="resume.html" target="_blank" class="pastel-outline-btn px-4 py-1.5 text-xs font-semibold rounded-full flex items-center gap-1.5">
           <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
           <span>Resume</span>
         </a>
-        <a href="#contact" class="px-4 py-1.5 text-xs font-semibold rounded-full bg-purple-600 hover:bg-purple-500 text-white purple-glow-btn transition flex items-center gap-1.5">
+        <a href="#contact" class="pastel-pink-btn px-4 py-1.5 text-xs font-bold rounded-full flex items-center gap-1.5">
           <span>Let's Talk</span>
           <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-300 hover:text-pastel-pink focus:outline-none" aria-label="Toggle menu">
         <i data-lucide="menu" id="menu-icon" class="w-5 h-5"></i>
       </button>
     </nav>
   </header>
 
-  <!-- Mobile Menu Dropdown Modal -->
-  <div id="mobile-menu" class="fixed inset-x-4 top-20 bg-dark-900/95 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-6 z-40 hidden flex-col gap-4 shadow-2xl transition-all">
-    <a href="#about" class="mobile-nav-link text-slate-200 text-base font-medium py-2 border-b border-white/5 flex items-center justify-between">
+  <!-- Mobile Menu Dropdown Modal with Frosted Pastel Aesthetic -->
+  <div id="mobile-menu" class="fixed inset-x-4 top-20 soft-frosted-nav rounded-3xl p-6 z-40 hidden flex-col gap-4 shadow-2xl transition-all border border-pink-500/20">
+    <a href="#about" class="mobile-nav-link text-slate-200 text-base font-medium py-2.5 border-b border-white/5 flex items-center justify-between hover:text-pastel-pink transition">
       <span>About</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-purple-400"></i>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-pastel-rose"></i>
     </a>
-    <a href="#skills" class="mobile-nav-link text-slate-200 text-base font-medium py-2 border-b border-white/5 flex items-center justify-between">
+    <a href="#skills" class="mobile-nav-link text-slate-200 text-base font-medium py-2.5 border-b border-white/5 flex items-center justify-between hover:text-pastel-pink transition">
       <span>Skills</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-purple-400"></i>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-pastel-rose"></i>
     </a>
-    <a href="#projects" class="mobile-nav-link text-slate-200 text-base font-medium py-2 border-b border-white/5 flex items-center justify-between">
+    <a href="#projects" class="mobile-nav-link text-slate-200 text-base font-medium py-2.5 border-b border-white/5 flex items-center justify-between hover:text-pastel-pink transition">
       <span>Projects</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-purple-400"></i>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-pastel-rose"></i>
     </a>
-    <a href="#contact" class="mobile-nav-link text-slate-200 text-base font-medium py-2 border-b border-white/5 flex items-center justify-between">
+    <a href="#contact" class="mobile-nav-link text-slate-200 text-base font-medium py-2.5 border-b border-white/5 flex items-center justify-between hover:text-pastel-pink transition">
       <span>Contact</span>
-      <i data-lucide="chevron-right" class="w-4 h-4 text-purple-400"></i>
+      <i data-lucide="chevron-right" class="w-4 h-4 text-pastel-rose"></i>
     </a>
     <div class="flex items-center gap-3 pt-2">
-      <a href="resume.html" target="_blank" class="flex-1 text-center py-2.5 rounded-xl border border-purple-500/40 text-purple-300 text-sm font-semibold">Resume</a>
-      <a href="#contact" class="mobile-nav-link flex-1 text-center py-2.5 rounded-xl bg-purple-600 text-white text-sm font-semibold purple-glow-btn">Hire Me</a>
+      <a href="resume.html" target="_blank" class="pastel-outline-btn flex-1 text-center py-2.5 rounded-2xl text-xs font-semibold">Resume</a>
+      <a href="#contact" class="mobile-nav-link pastel-pink-btn flex-1 text-center py-2.5 rounded-2xl text-xs font-bold">Hire Me</a>
     </div>
   </div>
 
@@ -1134,9 +1218,9 @@
       });
 
       navLinksScroll.forEach(link => {
-        link.classList.remove('bg-purple-600/30', 'text-purple-300');
+        link.classList.remove('bg-pink-500/20', 'text-pastel-pink', 'border', 'border-pink-500/30', 'shadow-[0_0_15px_rgba(255,179,217,0.3)]');
         if (link.getAttribute('href') === `#${currentSection}`) {
-          link.classList.add('bg-purple-600/30', 'text-purple-300');
+          link.classList.add('bg-pink-500/20', 'text-pastel-pink', 'border', 'border-pink-500/30', 'shadow-[0_0_15px_rgba(255,179,217,0.3)]');
         }
       });
     });
