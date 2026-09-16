@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hans Marlon Ottojuan - Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      padding: 40px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none;
+      }
+    }
+
+    header {
+      border-bottom: 3px solid #8b5cf6;
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #8b5cf6;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      color: #555;
+      margin-top: 12px;
+    }
+
+    .contact-info a {
+      color: #8b5cf6;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      margin-bottom: 28px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 14px;
+      border-bottom: 2px solid #e5e5e5;
+      padding-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .summary {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 6px;
+    }
+
+    .experience-item, .education-item, .project-item {
+      margin-bottom: 20px;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .item-subtitle {
+      font-size: 14px;
+      color: #666;
+      font-style: italic;
+    }
+
+    .item-date {
+      font-size: 13px;
+      color: #888;
+      font-weight: 500;
+    }
+
+    .item-description {
+      font-size: 14px;
+      color: #555;
+      margin-top: 6px;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    ul li {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-category {
+      background: #f9f9f9;
+      padding: 14px;
+      border-radius: 8px;
+      border-left: 3px solid #8b5cf6;
+    }
+
+    .skill-category h3 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .skill-category p {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .btn-download {
+      display: inline-block;
+      background: #8b5cf6;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 20px;
+      transition: background 0.2s;
+    }
+
+    .btn-download:hover {
+      background: #7c3aed;
+    }
+
+    .highlight {
+      color: #8b5cf6;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print/Download Button -->
+  <div class="no-print" style="text-align: right; margin-bottom: 20px;">
+    <a href="#" class="btn-download" onclick="window.print(); return false;">📄 Download PDF</a>
+  </div>
+
+  <header>
+    <h1>Hans Marlon Ottojuan</h1>
+    <div class="subtitle">Full-Stack Developer & Creative Technologist</div>
+    <div class="contact-info">
+      <a href="mailto:marlongaming555@gmail.com">✉️ marlongaming555@gmail.com</a>
+      <a href="https://github.com/5marlon" target="_blank">🔗 github.com/5marlon</a>
+      <a href="https://5marlon.github.io/hans-portofolio" target="_blank">🌐 Portfolio Website</a>
+      <span>📍 Indonesia</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+    <p class="summary">
+      Passionate <span class="highlight">Full-Stack Developer</span> and high school student with expertise in modern web technologies,
+      computer hardware architecture, and system-level troubleshooting. Skilled in building scalable web applications
+      using React, Node.js, and various database systems. Proven ability to lead technical projects, manage workflows,
+      and deliver clean, maintainable code. Strong foundation in both frontend design and backend engineering,
+      complemented by hands-on experience in custom PC assembly and hardware diagnostics.
+    </p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <p>HTML5, CSS3, JavaScript (ES6+), TypeScript, React, Tailwind CSS, Responsive Design, Web Animations, UI/UX Prototyping (Figma, Canva)</p>
+      </div>
+      <div class="skill-category">
+        <h3>Backend & Databases</h3>
+        <p>Node.js, Express.js, Python, RESTful API Design, PostgreSQL, MongoDB, SQL Database Management</p>
+      </div>
+      <div class="skill-category">
+        <h3>Hardware & Systems</h3>
+        <p>Computer Assembly (Intel & NVIDIA), Custom PC Architecture, Hardware Diagnostics, System Troubleshooting (Windows & Android)</p>
+      </div>
+      <div class="skill-category">
+        <h3>Tools & Workflows</h3>
+        <p>Git, GitHub, Docker, Vite, Webpack, Microsoft Office Suite, Digital Media Editing (CapCut)</p>
+      </div>
+      <div class="skill-category">
+        <h3>Soft Skills</h3>
+        <p>Technical Leadership, Public Speaking, Public Relations, Analytical Problem Solving, Logic & Cryptographic Puzzles</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Featured Projects</h2>
+
+    <div class="project-item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Aether Dashboard</div>
+          <div class="item-subtitle">Real-Time Analytics Platform</div>
+        </div>
+        <div class="item-date">2025 - Present</div>
+      </div>
+      <p class="item-description">
+        Developed a real-time server metrics and network traffic monitoring dashboard with interactive data visualizations.
+        Built using <span class="highlight">React</span>, <span class="highlight">Chart.js</span>, <span class="highlight">Node.js</span>,
+        and <span class="highlight">Tailwind CSS</span>.
+      </p>
+      <ul>
+        <li>Implemented WebSocket-based real-time data streaming for live metric updates</li>
+        <li>Designed responsive chart components with smooth animations and user interactions</li>
+        <li>Optimized backend API endpoints for sub-100ms response times</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Nova E-Commerce Platform</div>
+          <div class="item-subtitle">Minimalist Online Store Engine</div>
+        </div>
+        <div class="item-date">2024 - 2025</div>
+      </div>
+      <p class="item-description">
+        Built a full-featured e-commerce platform with dynamic product filtering, persistent cart state, and Stripe payment integration.
+        Stack: <span class="highlight">JavaScript</span>, <span class="highlight">Express.js</span>, <span class="highlight">MongoDB</span>,
+        <span class="highlight">CSS Grid</span>.
+      </p>
+      <ul>
+        <li>Integrated Stripe API for secure payment processing and checkout flows</li>
+        <li>Implemented advanced product filtering with multi-criteria search capabilities</li>
+        <li>Designed mobile-first responsive layout with CSS Grid and Flexbox</li>
+      </ul>
+    </div>
+
+    <div class="project-item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">PixelCraft Engine</div>
+          <div class="item-subtitle">Browser-Based 2D Game Engine</div>
+        </div>
+        <div class="item-date">2024</div>
+      </div>
+      <p class="item-description">
+        Created a lightweight, browser-based 2D game engine from scratch using <span class="highlight">Vanilla JavaScript</span>,
+        <span class="highlight">HTML5 Canvas</span>, and <span class="highlight">Web Audio API</span>.
+        Designed for indie game developers seeking performance and simplicity.
+      </p>
+      <ul>
+        <li>Built custom rendering pipeline achieving 60 FPS on mid-range devices</li>
+        <li>Implemented collision detection, sprite animation, and audio management systems</li>
+        <li>Open-sourced on GitHub with comprehensive documentation and usage examples</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education-item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">High School Student</div>
+          <div class="item-subtitle">Currently Pursuing Secondary Education</div>
+        </div>
+        <div class="item-date">2023 - Present</div>
+      </div>
+      <p class="item-description">
+        Actively balancing academic excellence with self-directed technical learning. Focus areas include computer science,
+        mathematics, and logical problem-solving. Participating in coding competitions and tech communities.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Additional Experience</h2>
+
+    <div class="experience-item">
+      <div class="item-header">
+        <div>
+          <div class="item-title">Technical Project Lead</div>
+          <div class="item-subtitle">Self-Directed Learning & Open Source Contributions</div>
+        </div>
+        <div class="item-date">2023 - Present</div>
+      </div>
+      <ul>
+        <li>Managed end-to-end project workflows for multiple web application development initiatives</li>
+        <li>Conducted public speaking engagements and technical presentations on web development best practices</li>
+        <li>Provided hardware consultation and custom PC building services for peers and local clients</li>
+        <li>Developed data-driven surveys and analytics tools for community projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Interests & Hobbies</h2>
+    <p class="item-description">
+      Game mechanics analysis, cryptographic puzzles, digital media production, competitive programming,
+      hardware overclocking and optimization, UI/UX design exploration, open-source software contributions.
+    </p>
+  </section>
+
+  <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e5e5e5; text-align: center; color: #888; font-size: 12px;">
+    <p>References available upon request • Last Updated: September 2026</p>
+  </footer>
+
+</body>
+</html>
