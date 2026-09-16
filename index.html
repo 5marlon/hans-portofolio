@@ -1119,7 +1119,7 @@
 
     // 5. Active Navigation Link Highlighting on Scroll
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinksScroll = document.querySelectorAll('.nav-link');
 
     window.addEventListener('scroll', () => {
       let currentSection = '';
@@ -1133,7 +1133,7 @@
         }
       });
 
-      navLinks.forEach(link => {
+      navLinksScroll.forEach(link => {
         link.classList.remove('bg-purple-600/30', 'text-purple-300');
         if (link.getAttribute('href') === `#${currentSection}`) {
           link.classList.add('bg-purple-600/30', 'text-purple-300');
